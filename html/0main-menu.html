@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+
+        hr {
+            border-top: 2px solid #999;
+            width: 50%;
+            margin: 20px auto;
+            border-color: white;
+        }
+        body {
+			background: linear-gradient(to bottom, #09536a, #72b9a2);
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			background-attachment: fixed;
+			font-size: 15px;
+			font-family: Montserrat, Arial;
+			color: white;
+			text-align: center
+		}
+		.container {
+			display: flex;
+			align-items: center;
+			height: 100vh;
+			text-align: center;
+		}
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+			transform: scale(1.1);
+        }
+		input[type=text] {
+			padding: 10px;
+			border-radius: 40px;
+			background-color: transparent;
+			border: 2px solid rgba(255, 255, 255, 0.2);
+			color: white;
+			font-family: Helvetica, Georgia;
+			font-size: 15px
+		}
+		input[type=submit] {
+			margin: 20px;
+			display: inline-block;
+			justify-content: center;
+            align-items: center;
+			width: 50%;
+			height: 50px;
+			border-radius: 40px;
+			border: 3px solid rgba(255, 255, 255, 0.3);
+			background-color: transparent;
+			text-align: center;
+			line-height: 20px;
+			font-size: 15px;
+			font-family: Montserrat;
+			color: white;
+			padding: 10px 20px;
+			transition: all 0.2s ease-in-out;
+			text-transform: uppercase;
+		}
+		input[type=submit]:hover {
+		    background-color: rgba(255, 255, 255, 0.1)
+		}
+		header {
+          color: #fff;
+          font-family: Montserrat, sans-serif;
+          font-size: 35px;
+          font-weight: bold;
+          text-transform: uppercase;
+          padding: 40px;
+        }
+        .my-checkbox {
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          border-radius: 40px;
+		  border: 2px solid rgba(255, 255, 255, 0.3);
+          outline: none;
+          width: 14px;
+          height: 14px;
+          background-color: none;
+          border-radius: 2px;
+          margin-right: 6px;
+          vertical-align: middle;
+        }
+
+        .my-checkbox:checked {
+          background-color: #FFF;
+        }
+        ::placeholder {
+          color: rgba(255, 255, 255, 0.5)
+        }
+
+    </style>
+
+</head>
+<body>
+        <header>Ali's browsing genome service :) </header>
+
+
+        <form action="sequence" method="get">
+            <h2>EXAM) sequence: Info of sequences for id and species.</h2>
+            Species:
+            <input type="text" name="specie" placeholder="e.g. Human" class="white-textbox">
+            <br>
+            <br>
+            Id:
+            <input type="text" name="id" placeholder="e.g. ENSG00000165879" class="white-textbox">
+            <br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+            <br>
+            <br>
+            <input type="checkbox" name="even" class="my-checkbox"> Check for even bases
+        </form>
+        <form action="listSpecies" method="get">
+            <h2>1) listSpecies: Limit of species in the genome database.</h2>
+            Limit:
+            <input type="text" name="limit" placeholder="e.g. 20" class="white-textbox">
+            <br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+        <form action="karyotype" method="get">
+            <hr>
+            <h2>2) karyotype: Information about the karyotype.</h2>
+            Select the species:
+            <input type="text" name="specie" placeholder="e.g. Human" class="white-textbox">
+            <br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+        <form action="chromosomeLength" method="get">
+            <hr>
+            <h2>3) chromosomeLength: Chromosome length.</h2>
+            Select the species:
+            <input type="text" name="specie" placeholder="e.g. Human" class="white-textbox">
+            <br><br>
+            Select the chromosome:
+            <input type="text" name="min_len" placeholder="e.g. X" class="white-textbox">
+            <br><br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+        <form action="geneSeq" method="get">
+            <hr>
+            <h2>4) geneSeq: Get the sequence of a human gene.</h2>
+            Select the gene:
+            <input type="text" name="gene" placeholder="e.g. FRAT1" class="white-textbox">
+            <br><br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+        <form action="geneInfo" method="get">
+            <hr>
+            <h2>5) geneInfo: Get the start, end, length and id of a human gene.</h2>
+            Select the gene:
+            <input type="text" name="gene" placeholder="e.g. FRAT1" class="white-textbox">
+            <br><br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+        <form action="geneCalc" method="get">
+            <hr>
+           <h2>6) geneCalc: Get calculations on a gene.</h2>
+            Select the gene:
+            <input type="text" name="gene" placeholder="e.g. FRAT1" class="white-textbox">
+            <br><br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+        <form action="geneList" method="get">
+            <hr>
+            <h2>7) geneList: Get gene names with chromosome, for homo-sapiens.</h2>
+            Select the chromosome number:
+            <input type="text" name="chromo" placeholder="e.g. 9" class="white-textbox">
+            <br><br>
+            Select the start point:
+            <input type="text" name="start" placeholder="e.g. 22125500" class="white-textbox">
+            <br><br>
+            Select the end point:
+            <input type="text" name="end" placeholder="e.g. 22136000" class="white-textbox">
+            <br><br>
+            <input type="submit" value="send"/>
+            <br>
+            <input type="checkbox" name="json" class="my-checkbox"> Json checkbox
+        </form>
+
+            <hr>
+
+        <br><br>
+        This server was made by Alicia Ulierte Arévalo for the subject of Programming in Network Environments.
+        Universidad Rey Juan Carlos, Biomedical Engineering, Alcorcón, 2023.
+        <br><br><br><br>
+</body>
+</html>

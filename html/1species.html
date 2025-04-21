@@ -1,0 +1,88 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <style>
+
+                hr {
+                    border-top: 2px solid #999;
+                    width: 50%;
+                    margin: 20px auto;
+                    border-color: white;
+                }
+                body {
+                    border: 2px solid white;
+                    box-sizing: border-box;
+                    padding: 20px;
+                    background: linear-gradient(to bottom, #09536a, #72b9a2);
+                    margin: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-attachment: fixed;
+                    font-size: 15px;
+                    font-family: Montserrat, Arial;
+                    color: white;
+                    text-align: center
+                }
+                .container {
+                    display: flex;
+                    align-items: center;
+                    height: 100vh;
+                    text-align: center;
+                }
+                button {
+                    margin: 20px;
+                    display: inline-block;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    height: 50px;
+                    border-radius: 40px;
+                    border: 3px solid rgba(255, 255, 255, 0.3);
+                    background-color: transparent;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 15px;
+                    font-family: Montserrat;
+                    color: white;
+                    padding: 10px 20px;
+                    transition: all 0.1s ease-in-out;
+                    text-transform: uppercase;
+                }
+                button:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    transform: scale(1.1);
+                }
+                input[type=text] {
+                    padding: 10px;
+                    border-radius: 40px;
+                    background-color: transparent;
+                    border: 2px solid rgba(255, 255, 255, 0.2);
+                    color: white;
+                    font-family: Helvetica, Georgia;
+                    font-size: 15px
+                }
+                header {
+                  color: #fff;
+                  font-family: Montserrat, sans-serif;
+                  font-size: 35px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  padding: 40px;
+                }
+            </style>
+            <meta charset="UTF-8">
+            <title>SPECIES</title>
+        </head>
+
+        <body style="background-color: #FFC0CB;" >
+            <p>The total number of species is: {{context.total_species}}</p>
+            <p>The limit you have selected is: {{context.limit}}</p>
+            <h1>The name of the species are:</h1>
+            {% for i in context.list_species %}
+                <ul>{{i}}</ul>
+            {% endfor %}
+            <br>
+            <a href="http://127.0.0.1:8080/" style="margin-bottom: 20px;">Main page</a>
+        </body>
+    </html>
+
