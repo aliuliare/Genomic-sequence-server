@@ -1,0 +1,107 @@
+    <!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <style>
+                hr {
+                    border-top: 2px solid #999;
+                    width: 50%;
+                    margin: 20px auto;
+                    border-color: white;
+                }
+                body {
+                    background: linear-gradient(to bottom, #09536a, #72b9a2);
+                    margin: 0;
+                    padding: 0;
+                    height: 100%;
+                    width: 100%;
+                    background-attachment: fixed;
+                    font-size: 25px;
+                    font-family: Montserrat, Arial;
+                    color: white;
+                    text-align: center
+                }
+                .container {
+                    display: flex;
+                    align-items: center;
+                    height: 100vh;
+                    text-align: center;
+                }
+                button {
+                    margin: 20px;
+                    display: inline-block;
+                    justify-content: center;
+                    align-items: center;
+                    width: 50%;
+                    height: 50px;
+                    border-radius: 40px;
+                    border: 3px solid rgba(255, 255, 255, 0.3);
+                    background-color: transparent;
+                    text-align: center;
+                    line-height: 20px;
+                    font-size: 15px;
+                    font-family: Montserrat;
+                    color: white;
+                    padding: 10px 20px;
+                    transition: all 0.1s ease-in-out;
+                    text-transform: uppercase;
+                }
+                button:hover {
+                    background-color: rgba(255, 255, 255, 0.2);
+                    transform: scale(1.1);
+                }
+                input[type=text] {
+                    padding: 10px;
+                    border-radius: 40px;
+                    background-color: transparent;
+                    border: 2px solid rgba(255, 255, 255, 0.2);
+                    color: white;
+                    font-family: Helvetica, Georgia;
+                    font-size: 15px
+                }
+                header {
+                  color: #000;
+                  font-family: Montserrat, sans-serif;
+                  font-size: 35px;
+                  font-weight: bold;
+                  text-transform: uppercase;
+                  padding: 40px;
+                }
+                textarea {
+                  padding: 10px;
+                  font-size: 20px;
+                  color: #09536a;
+                  border-radius: 35px;
+                  border: 2px solid #fff;
+                  background: white
+                }
+            </style>
+            <meta charset="UTF-8">
+            <title>EXAM</title>
+        </head>
+        <body style="background-color: #FFC0CB;" >
+            <h1>Exam question</h1>
+            The id asked for is: {{context.id_given}}
+            <br>
+            The specie is: {{context.specie}}
+            <br>
+            The sequence of this gene is:
+            <br>
+            <br>
+            <style>
+                #message {height: 70vh; width: 70%;}
+            </style>
+            <textarea id="message">
+                {{context.sequence}}
+            </textarea>
+            <br>
+            <br>
+            The length of this gene is: {{context.length}}
+            <br>
+            Checker for even or odd: {{context.type}}
+            <br>
+            <br>
+            <br>
+            <a href="http://127.0.0.1:8080/">Main page</a>
+        </body>
+    </html>
+
