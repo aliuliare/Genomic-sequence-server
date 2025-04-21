@@ -21,7 +21,6 @@ A server that provides genomic data, including gene sequences, chromosome length
 - Python 3.x
 - `pip` (Python package manager)
 
-- 
 Once the server is running, you can access the web application by navigating to `http://localhost:8080` in your browser.
 
 ## Usage
